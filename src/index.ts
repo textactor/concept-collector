@@ -1,0 +1,2 @@
+
+export { ConceptCollector } from './conceptCollector';
