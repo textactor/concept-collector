@@ -2,7 +2,7 @@
 import { UseCase, IUseCase } from '@textactor/domain';
 import { Concept, ConceptHelper, CreatingConceptData } from '@textactor/concept-domain';
 import { parse } from 'concepts-parser';
-import { IKnownNameService } from './knownNameService';
+import { IKnownNameService, KnownNameService } from './knownNameService';
 
 export type Context = {
     text: string
@@ -11,9 +11,11 @@ export type Context = {
 }
 
 export class ConceptCollector extends UseCase<Context, Concept[], void> {
+    private knownNames: IKnownNameService
 
-    constructor(private pushConcepts: IUseCase<Concept[], Concept[], void>, private knownNames: IKnownNameService) {
+    constructor(private pushConcepts: IUseCase<Concept[], Concept[], void>, knownNames?: IKnownNameService) {
         super();
+        this.knownNames = knownNames || new KnownNameService();
     }
 
     protected innerExecute(context: Context): Promise<Concept[]> {
