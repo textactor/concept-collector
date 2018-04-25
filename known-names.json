@@ -1,0 +1,70 @@
+{
+  "ro": {
+    "items": [
+      {
+        "search": [
+          "China",
+          "Chinei"
+        ],
+        "name": "Republica Populară Chineză"
+      },
+      {
+        "search": [
+          "Moscovei"
+        ],
+        "name": "Moscova"
+      }
+    ],
+    "countries": {
+      "md": [
+        {
+          "search": [
+            "Moldova",
+            "Moldovei"
+          ],
+          "name": "Republica Moldova"
+        },
+        {
+          "search": [
+            "MAI",
+            "Ministerul\\w* de Interne"
+          ],
+          "name": "Ministerul Afacerilor Interne"
+        },
+        {
+          "search": [
+            "MAE",
+            "Ministerul\\w* de Externe"
+          ],
+          "name": "Ministerul Afacerilor Externe"
+        },
+        {
+          "search": [
+            "PD"
+          ],
+          "name": "Partidul Democrat"
+        },
+        {
+          "search": [
+            "PL"
+          ],
+          "name": "Partidul Liberal"
+        },
+        {
+          "search": [
+            "Legislativul\\w*",
+            "Parlamentul\\w*"
+          ],
+          "name": "Parlamentul Republicii Moldova"
+        },
+        {
+          "search": [
+            "Executicul\\w*",
+            "Guvernul\\w*"
+          ],
+          "name": "Guvernul Republicii Moldova"
+        }
+      ]
+    }
+  }
+}
