@@ -18,7 +18,7 @@ export class KnownNameService implements IKnownNameService {
             if (items) {
                 for (let item of items) {
                     if (item.search.test(name)) {
-                        return item.name;
+                        return item.name || name.replace(item.search, item.replace);
                     }
                 }
             }
@@ -27,7 +27,7 @@ export class KnownNameService implements IKnownNameService {
                 if (items) {
                     for (let item of items) {
                         if (item.search.test(name)) {
-                            return item.name;
+                            return item.name || name.replace(item.search, item.replace);
                         }
                     }
                 }

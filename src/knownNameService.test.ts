@@ -12,3 +12,14 @@ test('ro_md (Moldova)', t => {
 test('ro (Moscovei)', t => {
     t.is(knownName.getKnownName('Moscovei', 'ro', 'md'), 'Moscova');
 });
+
+// test('ro_ro ... din Capitala', t => {
+//     t.is(knownName.getKnownName('Catedrala din Capitala', 'ro', 'ro'), 'Catedrala din București');
+// });
+
+// {
+//     "search": [
+//       "(.+) din Capital[ăa]"
+//     ],
+//     "replace": "$2 din București"
+//   },

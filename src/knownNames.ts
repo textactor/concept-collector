@@ -13,6 +13,9 @@ function initKnownNames() {
         }
     }
     for (let item of list) {
+        if (!item.name && !item.replace) {
+            throw new Error(`'name' or 'replace' are required`);
+        }
         const items = <string[]><any>item.search;
         if (!items.length) {
             throw new Error(`Invalid item: ${JSON.stringify(item)}`);
@@ -34,5 +37,6 @@ export type LanguageKnownNames = {
 
 export type KnownNameItem = {
     search: RegExp
-    name: string
+    name?: string
+    replace?: string
 }
