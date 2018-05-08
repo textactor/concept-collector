@@ -23,6 +23,22 @@
       }
     ],
     "countries": {
+      "ro": [
+        {
+          "search": [
+            "Legislativul\\w*",
+            "Parlamentul\\w*"
+          ],
+          "name": "Parlamentul României"
+        },
+        {
+          "search": [
+            "Executivul\\w*",
+            "Guvernul\\w*"
+          ],
+          "name": "Guvernul României"
+        }
+      ],
       "md": [
         {
           "search": [
