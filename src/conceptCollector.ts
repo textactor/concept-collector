@@ -8,6 +8,7 @@ export type Context = {
     text: string
     lang: string
     country: string
+    containerId: string
 }
 
 export class ConceptCollector extends UseCase<Context, Concept[], void> {
@@ -29,7 +30,8 @@ export class ConceptCollector extends UseCase<Context, Concept[], void> {
 
             const conceptData: CreatingConceptData = {
                 name: item.value, abbr: item.abbr, context: conceptContext, lang: context.lang,
-                country: context.country
+                country: context.country,
+                containerId: context.containerId,
             };
             conceptData.knownName = this.knownNames.getKnownName(conceptData.name, conceptData.lang, conceptData.country);
 
