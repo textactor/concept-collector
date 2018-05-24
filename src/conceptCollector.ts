@@ -1,4 +1,6 @@
 
+const debug = require('debug')('textactor:concept-collector');
+
 import { UseCase, IUseCase } from '@textactor/domain';
 import { Concept, ConceptHelper, KnownConceptData, IKnownNameService } from '@textactor/concept-domain';
 import { parse } from 'concepts-parser';
@@ -32,6 +34,7 @@ export class ConceptCollector extends UseCase<Context, Concept[], void> {
             const knownName = this.knownNames.getKnownName(conceptData.name, conceptData.lang, conceptData.country);
             if (knownName && knownName.name) {
                 conceptData.knownName = knownName.name;
+                debug(`set concept known name: ${conceptData.name}=>${conceptData.knownName}`);
             }
 
             return ConceptHelper.build(conceptData);
