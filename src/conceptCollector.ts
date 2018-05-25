@@ -4,6 +4,7 @@ const debug = require('debug')('textactor:concept-collector');
 import { UseCase, IUseCase } from '@textactor/domain';
 import { Concept, ConceptHelper, KnownConceptData, IKnownNameService } from '@textactor/concept-domain';
 import { parse } from 'concepts-parser';
+import { getContextFromText } from './helpers';
 
 export type Context = {
     text: string
@@ -42,10 +43,4 @@ export class ConceptCollector extends UseCase<Context, Concept[], void> {
 
         return this.pushConcepts.execute(concepts);
     }
-}
-
-
-function getContextFromText(text: string, index: number, length: number): string {
-    const start = index < 50 ? 0 : index - 50;
-    return text.substring(start, index + length + 50);
 }
